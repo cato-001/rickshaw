@@ -15,6 +15,7 @@ func NewRickshawServer() *server.Server {
 		Initialize:             initialize,
 		Shutdown:               shutdown,
 		TextDocumentCompletion: text_document_completion,
+		TextDocumentHover:      text_document_hover,
 	}
 	return server.NewServer(&handler, SERVER_NAME, true)
 }

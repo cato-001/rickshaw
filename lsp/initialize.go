@@ -6,9 +6,12 @@ import (
 	protocol "github.com/tliron/glsp/protocol_3_16"
 )
 
+var workspaces []protocol.WorkspaceFolder
+
 func initialize(context *glsp.Context, params *protocol.InitializeParams) (any, error) {
 	commonlog.NewInfoMessage(0, "Initializing server...")
 
+	workspaces = params.WorkspaceFolders
 	capabilities := handler.CreateServerCapabilities()
 
 	capabilities.CompletionProvider = &protocol.CompletionOptions{}

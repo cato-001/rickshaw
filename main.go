@@ -1,14 +1,14 @@
 package main
 
 import (
+	"fmt"
 	"rickshaw/lsp"
-
-	"github.com/tliron/commonlog"
-	protocol "github.com/tliron/glsp/protocol_3_16"
-	"github.com/tliron/glsp/server"
 )
 
 func main() {
 	server := lsp.NewRickshawServer()
-	server.RunStdio()
+	err := server.RunStdio()
+	if err != nil {
+		fmt.Println("An error occured while running the language server:", err)
+	}
 }
