@@ -1,4 +1,4 @@
-package sharper
+package csharp
 
 type CSharpClass struct {
 	name string

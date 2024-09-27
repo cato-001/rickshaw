@@ -7,10 +7,7 @@ import (
 
 func text_document_hover(context *glsp.Context, params *protocol.HoverParams) (*protocol.Hover, error) {
 	result := protocol.Hover{
-		Contents: protocol.MarkupContent{
-			Kind:  protocol.MarkupKindMarkdown,
-			Value: "Höverst du mich gerade?",
-		},
+		Contents: protocol.MarkupContent{},
 	}
 	return &result, nil
 }
